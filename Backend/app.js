@@ -8,3 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api", PaymentRouter);
+
+app.get("/api/getKey", (req, res) => {
+  res.status(200).json({ key: process.env.RAZORPAY_KEY });
+});
